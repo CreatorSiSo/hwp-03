@@ -30,8 +30,13 @@ int main() {
   std::string name;
   std::getline(std::cin, name);
 
-  std::array<double, 7> voltages_1 = { 0.0, 1.0, 2.0, 2.2, 2.5, 2.7, 3.0 };
+  std::cout << "Resistance: ";
+  std::string resistance_string;
+  std::getline(std::cin, resistance_string);
+  double resistance = stod(resistance_string);
 
+  std::array<double, 9> voltages_1 = { 0.0, 1.0, 2.0, 2.2, 2.5, 2.7, 3.0, 4.0, 5.0 };
+  
   for (auto voltage_1 : voltages_1) {
     std::ofstream csv_file;
     csv_file.open("./data/" + name + std::to_string(static_cast<uint8_t>(voltage_1 * 10.0)) + ".csv");
@@ -39,7 +44,7 @@ int main() {
 
     for (double voltage_0 = 0.0; voltage_0 <= 5.0; voltage_0 += 0.5) {
       auto output = measure(drv, voltage_0, voltage_1);
-      output.push_back((output[0] - output[1]) / 560.0);
+      output.push_back((output[0] - output[1]) / resistance);
     std::cout
       << "In: (" << voltage_0 << ", " << voltage_1 << "), "
       << "Out: (" << output[0] << ", " << output[1] << ", " << output[2] << ", " << output[3] << "), "
