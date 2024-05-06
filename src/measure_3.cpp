@@ -10,7 +10,7 @@ uint16_t to_uint_voltage(double val) {
   return static_cast<uint16_t>(val / 5.0 * 1023);
 }
 
-std::vector<double> measure(B15F& drv, double voltage_0, double voltage_1) {
+std::vector<double> measure(B15F& drv, double voltage_1, double voltage_0) {
   drv.analogWrite0(to_uint_voltage(voltage_0));
   drv.analogWrite1(to_uint_voltage(voltage_1));
 
@@ -35,7 +35,7 @@ int main() {
   std::getline(std::cin, resistance_string);
   double resistance = stod(resistance_string);
 
-  std::array<double, 7> voltages_1 = { 0.2, 0.4, 0.6, 0.7, 0.8, 0.9, 1.0 };
+  std::array<double, 4> voltages_1 = { 2.0, 3.0, 4.0, 5.0};
   
   for (auto voltage_1 : voltages_1) {
     std::ofstream csv_file;
