@@ -1,1 +1,0 @@
-g++ ../src/measure_2.cpp -o ../build/measure_2 -lb15fdrv && ../build/measure_2
