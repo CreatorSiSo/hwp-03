@@ -2,8 +2,8 @@ set datafile separator ";"
 set grid
 
 set xrange [0:3]
-set xlabel "U_DS [V]"
-set ylabel "I_D [A]"
+set ylabel "P [mW]"
+set xlabel "F [Hz]"
 
 plot "./data/trans2.csv" using 4:7 title "0.2 V" smooth bezier, \
      "./data/trans4.csv" using 4:7 title "0.4 V" smooth bezier, \

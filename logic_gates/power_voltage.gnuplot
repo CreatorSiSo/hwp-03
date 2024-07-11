@@ -1,8 +1,8 @@
 set datafile separator ";"
 set grid
 
-set xlabel "U_GS [V]"
-set ylabel "I_D [A]"
+set ylabel "P [mW]"
+set xlabel "U [V]"
 
 plot "./data/trans220.csv" using 5:7 title "2 V" smooth bezier, \
      "./data/trans230.csv" using 5:7 title "3 V" smooth bezier, \
