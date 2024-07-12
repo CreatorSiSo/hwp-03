@@ -1,4 +1,4 @@
-# freq [Hz], current [µA], power [mW]
+# freq [Hz], current [mA], power [mW]
 0,         0.02, 0.1
 50000,     0.04, 0.2
 100000,    0.05, 0.25
