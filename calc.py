@@ -2,8 +2,7 @@ import os
 import subprocess
 from pathlib import Path
 
-gate = input("Name of logic gate: ")
-path = f"{os.path.dirname(__file__)}/{gate}.csv"
+path = input("Path of file: ")
 content = Path(path).read_text()
 
 with open(path, "w") as file:
